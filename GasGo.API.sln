@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GasGo.API", "GasGo.API\GasGo.API.csproj", "{73651C83-B85E-4B88-A377-4FB60C8B5902}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GasGo.Data", "GasGo.Data\GasGo.Data.csproj", "{4231674F-6EB1-4CED-9EFE-33F572153D1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GasGo.Common", "GasGo.Common\GasGo.Common.csproj", "{6BDBEBB3-DF26-4503-819C-9D335EC27E46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GasGo.Handlers", "GasGo.Handlers\GasGo.Handlers.csproj", "{9710E487-71C3-4D7D-83B3-A612FC153941}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GasGo.Repositories", "GasGo.Repositories\GasGo.Repositories.csproj", "{7EE827C8-6BD5-4EA3-9547-72D43043AF5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73651C83-B85E-4B88-A377-4FB60C8B5902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73651C83-B85E-4B88-A377-4FB60C8B5902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73651C83-B85E-4B88-A377-4FB60C8B5902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73651C83-B85E-4B88-A377-4FB60C8B5902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4231674F-6EB1-4CED-9EFE-33F572153D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4231674F-6EB1-4CED-9EFE-33F572153D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4231674F-6EB1-4CED-9EFE-33F572153D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4231674F-6EB1-4CED-9EFE-33F572153D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BDBEBB3-DF26-4503-819C-9D335EC27E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BDBEBB3-DF26-4503-819C-9D335EC27E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BDBEBB3-DF26-4503-819C-9D335EC27E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BDBEBB3-DF26-4503-819C-9D335EC27E46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9710E487-71C3-4D7D-83B3-A612FC153941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9710E487-71C3-4D7D-83B3-A612FC153941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9710E487-71C3-4D7D-83B3-A612FC153941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9710E487-71C3-4D7D-83B3-A612FC153941}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE827C8-6BD5-4EA3-9547-72D43043AF5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE827C8-6BD5-4EA3-9547-72D43043AF5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE827C8-6BD5-4EA3-9547-72D43043AF5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE827C8-6BD5-4EA3-9547-72D43043AF5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB2502D3-0658-4553-B3E7-71DF831125EB}
+	EndGlobalSection
+EndGlobal
