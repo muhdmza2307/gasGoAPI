@@ -48,8 +48,6 @@ namespace GasGo.Data
             {
                 ServerName = "localhost",
                 DatabaseName = "gasgo-api",
-                Username = "postgres",
-                Password = "password",
                 UseIntegratedSecurity = false
             };
 
