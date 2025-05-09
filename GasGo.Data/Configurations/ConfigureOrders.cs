@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using GasGo.Data.Entities;
@@ -20,19 +21,20 @@ namespace GasGo.Data.Configurations
 
             builder.HasOne(o => o.CustomerVehicle)
                 .WithMany(o => o.CustomerOrders)
-                .HasForeignKey(o => o.CustomerVehicleId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(o => o.CustomerVehicleId);
 
-            builder.HasOne(o => o.DriverVehicle)
-                .WithMany(o => o.DriverAssignments)
-                .HasForeignKey(o => o.DriverVehicleId)
-                .OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(o => o.Delivery)
+                .WithOne(d => d.Order)
+                .HasForeignKey<Delivery>(d => d.OrderId);
 
-            builder.HasOne(b => b.Package)
-                .WithMany(b => b.Orders);
+            builder.HasOne(o => o.Package)
+                .WithMany(o => o.Orders);
 
-            builder.HasOne(b => b.Status)
-                .WithMany(b => b.Orders);
+            builder.HasOne(o => o.Status)
+                .WithMany(o => o.Orders);
+
+            builder.HasOne(o => o.OrderAddress)
+                .WithOne(a => a.Order);
         }
     }
 }

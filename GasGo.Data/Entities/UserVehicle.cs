@@ -15,6 +15,6 @@ namespace GasGo.Data.Entities
 
         public UserRole UserRole { get; set; } = null!;
         public ICollection<Order>? CustomerOrders { get; set; }
-        public ICollection<Order>? DriverAssignments { get; set; }
+        public ICollection<Delivery>? DriverDeliveries { get; set; }
     }
 }

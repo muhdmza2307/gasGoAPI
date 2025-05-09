@@ -3,6 +3,7 @@ using System;
 using GasGo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GasGo.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20250507035520_AddDelivery")]
+    partial class AddDelivery
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -143,9 +146,6 @@ namespace GasGo.Data.Migrations
                     b.Property<DateTime?>("DateLastModified")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("OrderAddressId")
-                        .HasColumnType("uuid");
-
                     b.Property<int>("PackageId")
                         .HasColumnType("integer");
 
@@ -156,49 +156,11 @@ namespace GasGo.Data.Migrations
 
                     b.HasIndex("CustomerVehicleId");
 
-                    b.HasIndex("OrderAddressId")
-                        .IsUnique();
-
                     b.HasIndex("PackageId");
 
                     b.HasIndex("StatusId");
 
                     b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("GasGo.Data.Entities.OrderAddress", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime?>("DateCreated")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime?>("DateLastModified")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<decimal>("Latitude")
-                        .HasColumnType("numeric");
-
-                    b.Property<decimal>("Longitude")
-                        .HasColumnType("numeric");
-
-                    b.Property<string>("PostalCode")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("State")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Street")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OrderAddresses");
                 });
 
             modelBuilder.Entity("GasGo.Data.Entities.OrderPackage", b =>
@@ -433,12 +395,6 @@ namespace GasGo.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GasGo.Data.Entities.OrderAddress", "OrderAddress")
-                        .WithOne("Order")
-                        .HasForeignKey("GasGo.Data.Entities.Order", "OrderAddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("GasGo.Data.Entities.OrderPackage", "Package")
                         .WithMany("Orders")
                         .HasForeignKey("PackageId")
@@ -452,8 +408,6 @@ namespace GasGo.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("CustomerVehicle");
-
-                    b.Navigation("OrderAddress");
 
                     b.Navigation("Package");
 
@@ -498,12 +452,6 @@ namespace GasGo.Data.Migrations
             modelBuilder.Entity("GasGo.Data.Entities.Order", b =>
                 {
                     b.Navigation("Delivery")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("GasGo.Data.Entities.OrderAddress", b =>
-                {
-                    b.Navigation("Order")
                         .IsRequired();
                 });
 

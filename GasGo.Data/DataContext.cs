@@ -29,6 +29,9 @@ namespace GasGo.Data
         public DbSet<OrderPackage> OrderPackages { get; set; } = null!;
         public DbSet<OrderStatus> OrderStatuses { get; set; } = null!;
         public DbSet<Order> Orders { get; set; } = null!;
+        public DbSet<DeliveryStatus> DeliveryStatuses { get; set; } = null!;
+        public DbSet<Delivery> Deliveries { get; set; } = null!;
+        public DbSet<OrderAddress> OrderAddresses { get; set; } = null!;
 
 
         private bool IsUnitOfWorkActive { get; set; }
@@ -48,7 +51,7 @@ namespace GasGo.Data
             {
                 ServerName = "localhost",
                 DatabaseName = "gasgo-api",
-                UseIntegratedSecurity = false
+                UseIntegratedSecurity = false,
             };
 
             var npgsqlBuilder = new NpgsqlConnectionStringBuilder
